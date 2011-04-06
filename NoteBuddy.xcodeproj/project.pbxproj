@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28AAEBEC134C146000EE0F9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBEB134C146000EE0F9B /* UIKit.framework */; };
+		28AAEBEE134C146000EE0F9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBED134C146000EE0F9B /* Foundation.framework */; };
+		28AAEBF0134C146000EE0F9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */; };
+		28AAEBF2134C146000EE0F9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBF1134C146000EE0F9B /* CoreData.framework */; };
+		28AAEBF8134C146000EE0F9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28AAEBF6134C146000EE0F9B /* InfoPlist.strings */; };
+		28AAEBFB134C146000EE0F9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEBFA134C146000EE0F9B /* main.m */; };
+		28AAEBFE134C146000EE0F9B /* NoteBuddyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEBFD134C146000EE0F9B /* NoteBuddyAppDelegate.m */; };
+		28AAEC01134C146000EE0F9B /* NoteBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEBFF134C146000EE0F9B /* NoteBuddy.xcdatamodeld */; };
+		28AAEC04134C146000EE0F9B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AAEC02134C146000EE0F9B /* MainWindow.xib */; };
+		28AAEC07134C146000EE0F9B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC06134C146000EE0F9B /* DetailViewController.m */; };
+		28AAEC0A134C146000EE0F9B /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AAEC08134C146000EE0F9B /* DetailView.xib */; };
+		28AAEC0D134C146000EE0F9B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC0C134C146000EE0F9B /* RootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28AAEBE7134C146000EE0F9B /* NoteBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AAEBEB134C146000EE0F9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28AAEBED134C146000EE0F9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AAEBF1134C146000EE0F9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		28AAEBF5134C146000EE0F9B /* NoteBuddy-Info.plist */ = {isa = PBXFileReference; path = "NoteBuddy-Info.plist"; sourceTree = "<group>"; };
+		28AAEBF7134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		28AAEBF9134C146000EE0F9B /* NoteBuddy-Prefix.pch */ = {isa = PBXFileReference; path = "NoteBuddy-Prefix.pch"; sourceTree = "<group>"; };
+		28AAEBFA134C146000EE0F9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28AAEBFC134C146000EE0F9B /* NoteBuddyAppDelegate.h */ = {isa = PBXFileReference; path = NoteBuddyAppDelegate.h; sourceTree = "<group>"; };
+		28AAEBFD134C146000EE0F9B /* NoteBuddyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteBuddyAppDelegate.m; sourceTree = "<group>"; };
+		28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteBuddy.xcdatamodel; sourceTree = "<group>"; };
+		28AAEC03134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		28AAEC05134C146000EE0F9B /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		28AAEC06134C146000EE0F9B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		28AAEC09134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		28AAEC0B134C146000EE0F9B /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		28AAEC0C134C146000EE0F9B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28AAEBE4134C146000EE0F9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AAEBEC134C146000EE0F9B /* UIKit.framework in Frameworks */,
+				28AAEBEE134C146000EE0F9B /* Foundation.framework in Frameworks */,
+				28AAEBF0134C146000EE0F9B /* CoreGraphics.framework in Frameworks */,
+				28AAEBF2134C146000EE0F9B /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28AAEBDC134C146000EE0F9B = {
+			isa = PBXGroup;
+			children = (
+				28AAEBF3134C146000EE0F9B /* NoteBuddy */,
+				28AAEBEA134C146000EE0F9B /* Frameworks */,
+				28AAEBE8134C146000EE0F9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28AAEBE8134C146000EE0F9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28AAEBE7134C146000EE0F9B /* NoteBuddy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28AAEBEA134C146000EE0F9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28AAEBEB134C146000EE0F9B /* UIKit.framework */,
+				28AAEBED134C146000EE0F9B /* Foundation.framework */,
+				28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */,
+				28AAEBF1134C146000EE0F9B /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28AAEBF3134C146000EE0F9B /* NoteBuddy */ = {
+			isa = PBXGroup;
+			children = (
+				28AAEBFC134C146000EE0F9B /* NoteBuddyAppDelegate.h */,
+				28AAEBFD134C146000EE0F9B /* NoteBuddyAppDelegate.m */,
+				28AAEC02134C146000EE0F9B /* MainWindow.xib */,
+				28AAEC05134C146000EE0F9B /* DetailViewController.h */,
+				28AAEC06134C146000EE0F9B /* DetailViewController.m */,
+				28AAEC08134C146000EE0F9B /* DetailView.xib */,
+				28AAEC0B134C146000EE0F9B /* RootViewController.h */,
+				28AAEC0C134C146000EE0F9B /* RootViewController.m */,
+				28AAEBFF134C146000EE0F9B /* NoteBuddy.xcdatamodeld */,
+				28AAEBF4134C146000EE0F9B /* Supporting Files */,
+			);
+			path = NoteBuddy;
+			sourceTree = "<group>";
+		};
+		28AAEBF4134C146000EE0F9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28AAEBF5134C146000EE0F9B /* NoteBuddy-Info.plist */,
+				28AAEBF6134C146000EE0F9B /* InfoPlist.strings */,
+				28AAEBF9134C146000EE0F9B /* NoteBuddy-Prefix.pch */,
+				28AAEBFA134C146000EE0F9B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28AAEBE6134C146000EE0F9B /* NoteBuddy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28AAEC10134C146000EE0F9B /* Build configuration list for PBXNativeTarget "NoteBuddy" */;
+			buildPhases = (
+				28AAEBE3134C146000EE0F9B /* Sources */,
+				28AAEBE4134C146000EE0F9B /* Frameworks */,
+				28AAEBE5134C146000EE0F9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoteBuddy;
+			productName = NoteBuddy;
+			productReference = 28AAEBE7134C146000EE0F9B /* NoteBuddy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28AAEBDE134C146000EE0F9B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 28AAEBE1134C146000EE0F9B /* Build configuration list for PBXProject "NoteBuddy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 28AAEBDC134C146000EE0F9B;
+			productRefGroup = 28AAEBE8134C146000EE0F9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28AAEBE6134C146000EE0F9B /* NoteBuddy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28AAEBE5134C146000EE0F9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AAEBF8134C146000EE0F9B /* InfoPlist.strings in Resources */,
+				28AAEC04134C146000EE0F9B /* MainWindow.xib in Resources */,
+				28AAEC0A134C146000EE0F9B /* DetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28AAEBE3134C146000EE0F9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AAEBFB134C146000EE0F9B /* main.m in Sources */,
+				28AAEBFE134C146000EE0F9B /* NoteBuddyAppDelegate.m in Sources */,
+				28AAEC01134C146000EE0F9B /* NoteBuddy.xcdatamodeld in Sources */,
+				28AAEC07134C146000EE0F9B /* DetailViewController.m in Sources */,
+				28AAEC0D134C146000EE0F9B /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28AAEBF6134C146000EE0F9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28AAEBF7134C146000EE0F9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		28AAEC02134C146000EE0F9B /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28AAEC03134C146000EE0F9B /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		28AAEC08134C146000EE0F9B /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28AAEC09134C146000EE0F9B /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28AAEC0E134C146000EE0F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		28AAEC0F134C146000EE0F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		28AAEC11134C146000EE0F9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteBuddy/NoteBuddy-Prefix.pch";
+				INFOPLIST_FILE = "NoteBuddy/NoteBuddy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		28AAEC12134C146000EE0F9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NoteBuddy/NoteBuddy-Prefix.pch";
+				INFOPLIST_FILE = "NoteBuddy/NoteBuddy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28AAEBE1134C146000EE0F9B /* Build configuration list for PBXProject "NoteBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28AAEC0E134C146000EE0F9B /* Debug */,
+				28AAEC0F134C146000EE0F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28AAEC10134C146000EE0F9B /* Build configuration list for PBXNativeTarget "NoteBuddy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28AAEC11134C146000EE0F9B /* Debug */,
+				28AAEC12134C146000EE0F9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		28AAEBFF134C146000EE0F9B /* NoteBuddy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */,
+			);
+			currentVersion = 28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */;
+			path = NoteBuddy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 28AAEBDE134C146000EE0F9B /* Project object */;
+}
