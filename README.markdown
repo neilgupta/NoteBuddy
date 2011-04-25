@@ -1,4 +1,5 @@
-===NoteBuddy===
+NoteBuddy
+=========
 
 Flashcard sharing app for iPad
 
