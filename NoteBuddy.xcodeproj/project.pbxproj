@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282AE0971356B52C00A8CCD2 /* FlashcardListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 282AE0951356B52C00A8CCD2 /* FlashcardListView.m */; };
+		282AE0981356B52C00A8CCD2 /* FlashcardListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282AE0961356B52C00A8CCD2 /* FlashcardListView.xib */; };
+		287A142B136161B200367F3A /* OCPromptView.m in Sources */ = {isa = PBXBuildFile; fileRef = 287A142A136161B200367F3A /* OCPromptView.m */; };
+		28829B361363F13F0037D183 /* notebuddy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28829B351363F13F0037D183 /* notebuddy.png */; };
+		28829B391363FB7E0037D183 /* addFlashcardBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 28829B381363FB7E0037D183 /* addFlashcardBG.png */; };
+		28829B3C136428630037D183 /* defaultDetailView.png in Resources */ = {isa = PBXBuildFile; fileRef = 28829B3A136428630037D183 /* defaultDetailView.png */; };
+		28829B3D136428630037D183 /* detailView.png in Resources */ = {isa = PBXBuildFile; fileRef = 28829B3B136428630037D183 /* detailView.png */; };
+		2891F294136377E9000DA12B /* FlashcardEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2891F292136377E9000DA12B /* FlashcardEditor.m */; };
+		2891F295136377E9000DA12B /* FlashcardEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2891F293136377E9000DA12B /* FlashcardEditor.xib */; };
+		2891F2981363A206000DA12B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2891F2971363A206000DA12B /* GameKit.framework */; };
 		28AAEBEC134C146000EE0F9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBEB134C146000EE0F9B /* UIKit.framework */; };
 		28AAEBEE134C146000EE0F9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBED134C146000EE0F9B /* Foundation.framework */; };
 		28AAEBF0134C146000EE0F9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */; };
@@ -19,27 +29,47 @@
 		28AAEC07134C146000EE0F9B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC06134C146000EE0F9B /* DetailViewController.m */; };
 		28AAEC0A134C146000EE0F9B /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AAEC08134C146000EE0F9B /* DetailView.xib */; };
 		28AAEC0D134C146000EE0F9B /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC0C134C146000EE0F9B /* RootViewController.m */; };
+		28AAEC25134C1F2E00EE0F9B /* Flashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC24134C1F2D00EE0F9B /* Flashcard.m */; };
+		28AAEC32134C2B0A00EE0F9B /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AAEC31134C2B0A00EE0F9B /* Course.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		282AE0941356B52C00A8CCD2 /* FlashcardListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardListView.h; sourceTree = "<group>"; };
+		282AE0951356B52C00A8CCD2 /* FlashcardListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardListView.m; sourceTree = "<group>"; };
+		282AE0961356B52C00A8CCD2 /* FlashcardListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashcardListView.xib; sourceTree = "<group>"; };
+		287A14271361443100367F3A /* NoteBuddy 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "NoteBuddy 4.xcdatamodel"; sourceTree = "<group>"; };
+		287A1429136161B100367F3A /* OCPromptView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPromptView.h; sourceTree = "<group>"; };
+		287A142A136161B200367F3A /* OCPromptView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPromptView.m; sourceTree = "<group>"; };
+		28829B351363F13F0037D183 /* notebuddy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notebuddy.png; path = ../notebuddy.png; sourceTree = "<group>"; };
+		28829B381363FB7E0037D183 /* addFlashcardBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFlashcardBG.png; sourceTree = "<group>"; };
+		28829B3A136428630037D183 /* defaultDetailView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultDetailView.png; sourceTree = "<group>"; };
+		28829B3B136428630037D183 /* detailView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailView.png; sourceTree = "<group>"; };
+		2891F291136377E9000DA12B /* FlashcardEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardEditor.h; sourceTree = "<group>"; };
+		2891F292136377E9000DA12B /* FlashcardEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardEditor.m; sourceTree = "<group>"; };
+		2891F293136377E9000DA12B /* FlashcardEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlashcardEditor.xib; sourceTree = "<group>"; };
+		2891F2971363A206000DA12B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		28AAEBE7134C146000EE0F9B /* NoteBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AAEBEB134C146000EE0F9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28AAEBED134C146000EE0F9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AAEBF1134C146000EE0F9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		28AAEBF5134C146000EE0F9B /* NoteBuddy-Info.plist */ = {isa = PBXFileReference; path = "NoteBuddy-Info.plist"; sourceTree = "<group>"; };
+		28AAEBF5134C146000EE0F9B /* NoteBuddy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteBuddy-Info.plist"; sourceTree = "<group>"; };
 		28AAEBF7134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		28AAEBF9134C146000EE0F9B /* NoteBuddy-Prefix.pch */ = {isa = PBXFileReference; path = "NoteBuddy-Prefix.pch"; sourceTree = "<group>"; };
+		28AAEBF9134C146000EE0F9B /* NoteBuddy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteBuddy-Prefix.pch"; sourceTree = "<group>"; };
 		28AAEBFA134C146000EE0F9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		28AAEBFC134C146000EE0F9B /* NoteBuddyAppDelegate.h */ = {isa = PBXFileReference; path = NoteBuddyAppDelegate.h; sourceTree = "<group>"; };
+		28AAEBFC134C146000EE0F9B /* NoteBuddyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteBuddyAppDelegate.h; sourceTree = "<group>"; };
 		28AAEBFD134C146000EE0F9B /* NoteBuddyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteBuddyAppDelegate.m; sourceTree = "<group>"; };
-		28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteBuddy.xcdatamodel; sourceTree = "<group>"; };
 		28AAEC03134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		28AAEC05134C146000EE0F9B /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		28AAEC05134C146000EE0F9B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		28AAEC06134C146000EE0F9B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		28AAEC09134C146000EE0F9B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
-		28AAEC0B134C146000EE0F9B /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		28AAEC0B134C146000EE0F9B /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28AAEC0C134C146000EE0F9B /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		28AAEC23134C1F2D00EE0F9B /* Flashcard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flashcard.h; sourceTree = "<group>"; };
+		28AAEC24134C1F2D00EE0F9B /* Flashcard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flashcard.m; sourceTree = "<group>"; };
+		28AAEC29134C2A2100EE0F9B /* NoteBuddy 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "NoteBuddy 2.xcdatamodel"; sourceTree = "<group>"; };
+		28AAEC30134C2B0A00EE0F9B /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		28AAEC31134C2B0A00EE0F9B /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2891F2981363A206000DA12B /* GameKit.framework in Frameworks */,
 				28AAEBEC134C146000EE0F9B /* UIKit.framework in Frameworks */,
 				28AAEBEE134C146000EE0F9B /* Foundation.framework in Frameworks */,
 				28AAEBF0134C146000EE0F9B /* CoreGraphics.framework in Frameworks */,
@@ -77,6 +108,7 @@
 		28AAEBEA134C146000EE0F9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2891F2971363A206000DA12B /* GameKit.framework */,
 				28AAEBEB134C146000EE0F9B /* UIKit.framework */,
 				28AAEBED134C146000EE0F9B /* Foundation.framework */,
 				28AAEBEF134C146000EE0F9B /* CoreGraphics.framework */,
@@ -88,15 +120,31 @@
 		28AAEBF3134C146000EE0F9B /* NoteBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				28829B3A136428630037D183 /* defaultDetailView.png */,
+				28829B3B136428630037D183 /* detailView.png */,
+				28829B381363FB7E0037D183 /* addFlashcardBG.png */,
+				28829B351363F13F0037D183 /* notebuddy.png */,
 				28AAEBFC134C146000EE0F9B /* NoteBuddyAppDelegate.h */,
 				28AAEBFD134C146000EE0F9B /* NoteBuddyAppDelegate.m */,
+				28AAEC23134C1F2D00EE0F9B /* Flashcard.h */,
+				28AAEC24134C1F2D00EE0F9B /* Flashcard.m */,
 				28AAEC02134C146000EE0F9B /* MainWindow.xib */,
 				28AAEC05134C146000EE0F9B /* DetailViewController.h */,
 				28AAEC06134C146000EE0F9B /* DetailViewController.m */,
 				28AAEC08134C146000EE0F9B /* DetailView.xib */,
+				2891F291136377E9000DA12B /* FlashcardEditor.h */,
+				2891F292136377E9000DA12B /* FlashcardEditor.m */,
+				2891F293136377E9000DA12B /* FlashcardEditor.xib */,
 				28AAEC0B134C146000EE0F9B /* RootViewController.h */,
 				28AAEC0C134C146000EE0F9B /* RootViewController.m */,
+				282AE0941356B52C00A8CCD2 /* FlashcardListView.h */,
+				282AE0951356B52C00A8CCD2 /* FlashcardListView.m */,
+				282AE0961356B52C00A8CCD2 /* FlashcardListView.xib */,
+				287A1429136161B100367F3A /* OCPromptView.h */,
+				287A142A136161B200367F3A /* OCPromptView.m */,
 				28AAEBFF134C146000EE0F9B /* NoteBuddy.xcdatamodeld */,
+				28AAEC30134C2B0A00EE0F9B /* Course.h */,
+				28AAEC31134C2B0A00EE0F9B /* Course.m */,
 				28AAEBF4134C146000EE0F9B /* Supporting Files */,
 			);
 			path = NoteBuddy;
@@ -163,6 +211,12 @@
 				28AAEBF8134C146000EE0F9B /* InfoPlist.strings in Resources */,
 				28AAEC04134C146000EE0F9B /* MainWindow.xib in Resources */,
 				28AAEC0A134C146000EE0F9B /* DetailView.xib in Resources */,
+				282AE0981356B52C00A8CCD2 /* FlashcardListView.xib in Resources */,
+				2891F295136377E9000DA12B /* FlashcardEditor.xib in Resources */,
+				28829B361363F13F0037D183 /* notebuddy.png in Resources */,
+				28829B391363FB7E0037D183 /* addFlashcardBG.png in Resources */,
+				28829B3C136428630037D183 /* defaultDetailView.png in Resources */,
+				28829B3D136428630037D183 /* detailView.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +232,11 @@
 				28AAEC01134C146000EE0F9B /* NoteBuddy.xcdatamodeld in Sources */,
 				28AAEC07134C146000EE0F9B /* DetailViewController.m in Sources */,
 				28AAEC0D134C146000EE0F9B /* RootViewController.m in Sources */,
+				28AAEC25134C1F2E00EE0F9B /* Flashcard.m in Sources */,
+				28AAEC32134C2B0A00EE0F9B /* Course.m in Sources */,
+				282AE0971356B52C00A8CCD2 /* FlashcardListView.m in Sources */,
+				287A142B136161B200367F3A /* OCPromptView.m in Sources */,
+				2891F294136377E9000DA12B /* FlashcardEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +351,7 @@
 				28AAEC12134C146000EE0F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -299,9 +359,10 @@
 		28AAEBFF134C146000EE0F9B /* NoteBuddy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */,
+				287A14271361443100367F3A /* NoteBuddy 4.xcdatamodel */,
+				28AAEC29134C2A2100EE0F9B /* NoteBuddy 2.xcdatamodel */,
 			);
-			currentVersion = 28AAEC00134C146000EE0F9B /* NoteBuddy.xcdatamodel */;
+			currentVersion = 28AAEC29134C2A2100EE0F9B /* NoteBuddy 2.xcdatamodel */;
 			path = NoteBuddy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

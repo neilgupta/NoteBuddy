@@ -2,24 +2,23 @@
 //  RootViewController.m
 //  NoteBuddy
 //
-//  Created by Neil Gupta on 4/5/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Neil Gupta. All rights reserved.
 //
 
 #import "RootViewController.h"
-
+#import "FlashcardListView.h"
 #import "DetailViewController.h"
+#import "OCPromptView.h"
+
 
 @interface RootViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation RootViewController
-		
-@synthesize detailViewController;
 
 @synthesize fetchedResultsController;
-
+@synthesize detailViewController;
 @synthesize managedObjectContext;
 
 - (void)viewDidLoad
@@ -27,19 +26,15 @@
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    self.title = @"Courses";
+
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
 }
 
-		
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -58,10 +53,14 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
 	[super viewDidDisappear:animated];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+    if(interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIDeviceOrientationLandscapeRight)
+        return YES;
+    else
+        return NO;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -76,7 +75,7 @@
     return [sectionInfo numberOfObjects];
 }
 
-		
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -110,13 +109,8 @@
         // Save the context.
         NSError *error = nil;
         if (![context save:&error]) {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            //abort();
         }
     }   
 }
@@ -129,9 +123,13 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Set the detail item in the detail view controller.
     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    detailViewController.detailItem = selectedObject;    
+        
+    FlashcardListView *listView = [[FlashcardListView alloc] initWithStyle:[aTableView style] withCourse:selectedObject];
+    listView.managedObjectContext = self.managedObjectContext;
+    listView.detailViewController = detailViewController;
+    [[self navigationController] pushViewController:listView animated:YES];
+    [listView release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -150,7 +148,6 @@
 
 - (void)dealloc
 {
-    [detailViewController release];
     [fetchedResultsController release];
     [managedObjectContext release];
     [super dealloc];
@@ -159,39 +156,52 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [[managedObject valueForKey:@"Name"] description];
 }
 
 - (void)insertNewObject:(id)sender
 {
+    if(![[[self navigationController] topViewController].title isEqualToString:@"Courses"]) {
+        [((FlashcardListView *)[[self navigationController] topViewController]) insertNewObject:sender];
+        return;
+    }
+    
     NSIndexPath *currentSelection = [self.tableView indexPathForSelectedRow];
     if (currentSelection != nil) {
         [self.tableView deselectRowAtIndexPath:currentSelection animated:NO];
-    }    
-    
-    // Create a new instance of the entity managed by the fetched results controller.
-    NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
     }
+
+    // Show modified alertView with text box for course name
+    OCPromptView *alert = [[OCPromptView alloc] initWithPrompt:@"Enter Course Name" delegate:self cancelButtonTitle:@"Cancel" acceptButtonTitle:@"OK"];
+	[alert show];
+    [alert release];
+}
+
+// Upon dismissing alert view, create new Course with given name if OK button was pushed
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *enteredText = [(OCPromptView *)alertView enteredText];
     
-    NSIndexPath *insertionPath = [fetchedResultsController indexPathForObject:newManagedObject];
-    [self.tableView selectRowAtIndexPath:insertionPath animated:YES scrollPosition:UITableViewScrollPositionTop];
-    detailViewController.detailItem = newManagedObject;
+    if (buttonIndex != [alertView cancelButtonIndex] && ![enteredText isEqualToString:@""]) { 
+        // OK button pushed and course name is not blank
+        
+        // Create a new instance of the entity managed by the fetched results controller.
+        NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
+        NSEntityDescription *entity = [[fetchedResultsController fetchRequest] entity];
+        NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+
+        // If appropriate, configure the new managed object.
+        [newManagedObject setValue:enteredText forKey:@"Name"];
+
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        NSIndexPath *insertionPath = [fetchedResultsController indexPathForObject:newManagedObject];
+        [self.tableView selectRowAtIndexPath:insertionPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    }
 }
 
 #pragma mark - Fetched results controller
@@ -208,21 +218,21 @@
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"Name" ascending:NO];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -238,13 +248,14 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView beginUpdates];
+    //[self.tableView beginUpdates];
+    [self.tableView reloadData];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
 {
-    switch(type) {
+    /*switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
@@ -252,14 +263,15 @@
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-    }
+    }*/
+    [self.tableView reloadData];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    UITableView *tableView = self.tableView;
+    /*UITableView *tableView = self.tableView;
     
     switch(type) {
             
@@ -279,22 +291,14 @@
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]withRowAnimation:UITableViewRowAnimationFade];
             break;
-    }
+    }*/
+    [self.tableView reloadData];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.tableView endUpdates];
-}
-
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
+    //[self.tableView endUpdates];
     [self.tableView reloadData];
 }
- */
 
 @end
